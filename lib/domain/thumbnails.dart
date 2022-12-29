@@ -58,7 +58,7 @@ void generateThumbnailUsingFFmg(
       await Directory(videoPlayerSnapshotDirectoryPath).create(recursive: true);
 
   FFmpegKit.execute(
-          '-i ${path} -s 240x135 -vf fps=1 ${snapshotDir.path}/ffmpeg_%0d.jpg')
+          '-i ${path} -s 300x300 -vf fps=1 ${snapshotDir.path}/ffmpeg_%0d.jpg')
       .then((session) async {
     // Return code for completed sessions. Will be undefined if session is still running or FFmpegKit fails to run it
     final returnCode = await session.getReturnCode();
